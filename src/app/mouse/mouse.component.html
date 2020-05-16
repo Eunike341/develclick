@@ -1,0 +1,227 @@
+<mat-card>
+  <mat-form-field>
+    <input matInput placeholder="Nama Lengkap" [formControl]="fullNameValidator" required autofocus [(ngModel)]="fullName">
+    <mat-error *ngIf="fullNameValidator.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <mat-card-content style="font-weight: bold">Score: {{submitted?score:''}}</mat-card-content>
+
+  <mat-card-content *ngIf="submitted && wrongAnsers.length>0">
+    Wrong answer(s)
+    <ul>
+      <li *ngFor="let questionNo of wrongAnsers">
+        {{ questionNo }}
+      </li>
+    </ul>
+  </mat-card-content>
+
+
+  <mat-card-content>Catatan: Perintah "Click" tanpa diikuti dengan kata "kanan", sama dengan "Click kiri"</mat-card-content>
+
+  <mat-card-content>Petunjuk:
+    <ol>
+      <li>
+        Isi nama lengkap anda.
+      </li>
+      <li>
+        Click pada baris dengan nomor soal untuk membuka isi soal.
+      </li>
+      <li>
+        Setelah mengerjakan semua soal, click button "Submit". Score anda akan tertulis di atas.
+      </li>
+      <li>
+        Bila score anda belum 10, click button "Retry" untuk mengulang.
+      </li>
+    </ol>
+  </mat-card-content>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header >
+        <mat-panel-title >
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(1)==-1">
+            &#9989;
+          </ng-container>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(1)!=-1">
+            &#10060;
+          </ng-container>
+          1. Click kanan pada button di bawah.
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div (contextmenu)="onRightClick($event, 1)">
+        <button mat-raised-button color="primary">Button!</button>&nbsp;
+      </div>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(2)==-1">
+            &#9989;
+          </ng-container>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(2)!=-1">
+            &#10060;
+          </ng-container>
+          2. Click pada button di bawah.
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div (click)="onLeftClick($event,2)">
+        <button mat-raised-button color="primary">Button!</button>&nbsp;
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(3)==-1">
+            &#9989;
+          </ng-container>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(3)!=-1">
+            &#10060;
+          </ng-container>
+          3. Double click pada button di bawah.
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div (dblclick)="onDblClick($event, 3)">
+        <button mat-raised-button color="primary">Button!</button>&nbsp;
+      </div>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(4)==-1">
+            &#9989;
+          </ng-container>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(4)!=-1">
+            &#10060;
+          </ng-container>
+          4. Urutkan angka-angka berikut dari 1 hingga 8 (paling kecil hingga paling besar).
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div cdkDropList cdkDropListOrientation="horizontal" class="example-list-tp" (cdkDropListDropped)="drop($event)">
+        <div class="example-box-tp" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(5)==-1">
+            &#9989;
+          </ng-container>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(5)!=-1">
+            &#10060;
+          </ng-container>
+          5. Urutkan angka-angka berikut dari 500 hingga 100 (paling besar hingga paling kecil).
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div cdkDropList cdkDropListOrientation="horizontal" class="example-list-tp" (cdkDropListDropped)="dropTimePeriods($event)">
+        <div class="example-box-tp" *ngFor="let timePeriod of timePeriods" cdkDrag>{{timePeriod}}</div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(6)==-1">
+            &#9989;
+          </ng-container>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(6)!=-1">
+            &#10060;
+          </ng-container>
+          6. Urutkan huruf-huruf berikut dari A hingga J.
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div cdkDropList cdkDropListOrientation="horizontal" class="example-list-tp" (cdkDropListDropped)="dropLetters($event)">
+        <div class="example-box-tp" *ngFor="let letter of letters" cdkDrag>{{letter}}</div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(7)==-1">
+            &#9989;
+          </ng-container>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(7)!=-1">
+            &#10060;
+          </ng-container>
+          7. Urutkan kata-kata di bawah menjadi kalimat "Mouse sangat mudah untuk digunakan".
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div cdkDropList cdkDropListOrientation="horizontal" class="example-list-tp" (cdkDropListDropped)="dropWords($event)">
+        <div class="example-box-tp" *ngFor="let word of words" cdkDrag>{{word}}</div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(8)==-1">
+            &#9989;
+          </ng-container>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(8)!=-1">
+            &#10060;
+          </ng-container>
+          8. Urutkan kata-kata di bawah menjadi kalimat "Latihan untuk menggunakan komputer sesering mungkin hingga mahir".
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div cdkDropList cdkDropListOrientation="horizontal" class="example-list-tp" (cdkDropListDropped)="dropWordsExc($event)">
+        <div class="example-box-tp" *ngFor="let word of wordsExc" cdkDrag>{{word}}</div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(9)==-1">
+            &#9989;
+          </ng-container>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(9)!=-1">
+            &#10060;
+          </ng-container>
+          9. Click pada button dengan nomor 9 di bawah.
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div >
+        <button mat-raised-button color="primary">Button 5</button>&nbsp;
+        <button mat-raised-button color="primary"(click)="onLeftClick($event,9)">Button 9</button>&nbsp;
+        <button mat-raised-button color="primary">Button 7</button>&nbsp;
+        <button mat-raised-button color="primary">Button 5</button>&nbsp;
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(10)==-1">
+            &#9989;
+          </ng-container>
+          <ng-container *ngIf="submitted && wrongAnsers.indexOf(10)!=-1">
+            &#10060;
+          </ng-container>
+          10. Double click pada button dengan tulisan "Komputer" di bawah.
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div >
+        <button mat-raised-button color="primary">Mouse</button>&nbsp;
+        <button mat-raised-button color="primary">Keyboard</button>&nbsp;
+        <button mat-raised-button color="primary">Monitor</button>&nbsp;
+        <button mat-raised-button color="primary" (dblclick)="onDblClick($event, 10)">Komputer</button>&nbsp;
+        <button mat-raised-button color="primary">Printer</button>&nbsp;
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <div style="padding-top: 10px">
+    <mat-card-content *ngIf="mobileDetected" style="color: red">
+      Submission dengan mobile phone tidak berlaku. Silahkan coba lagi dengan komputer/ laptop anda.
+    </mat-card-content>
+    <button mat-raised-button color='primary' *ngIf="!submitted && !fullNameValidator.invalid" (click)="submitScore()">Submit</button>&nbsp;
+    <button mat-raised-button color='primary' *ngIf="submitted" (click)="reset()">Retry</button>&nbsp;
+  </div>
+
+
+</mat-card>
+

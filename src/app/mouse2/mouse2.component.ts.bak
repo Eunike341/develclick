@@ -1,0 +1,73 @@
+import { Component, OnInit } from '@angular/core';
+@Component({
+  selector: 'app-mouse2',
+  templateUrl: './mouse2.component.html',
+  styleUrls: ['./mouse2.component.css']
+})
+export class Mouse2Component implements OnInit {
+
+  correctAnswers=[];
+  score= 0;
+  submitted = false;
+
+  wrongAnsers=[1,2,3,4,5,6,7,8,9,10];
+  fullName='';
+
+  onRightClick(event, questionIndex) {
+    console.log('clicked');
+    this.updateScore(questionIndex, true);
+    return false;
+  }
+
+  onLeftClick(event, questionIndex) {
+    console.log('left clicked, ' + questionIndex);
+    this.updateScore(questionIndex, true);
+    return false;
+  }
+
+  onDblClick(event, questionIndex) {
+    console.log('double clicked');
+    this.updateScore(questionIndex, true);
+    return false;
+  }
+
+  constructor() { }
+
+  ngOnInit() {
+    console.log('templateoninit');
+  }
+
+  submitScore () {
+    var totalQuestions = 10;
+    for(var i=0; i < totalQuestions; i++) {
+      if(this.correctAnswers.indexOf(i+1) != -1) {
+        this.score=this.score+1;
+      }
+    }
+    console.log('score:' + this.score);
+    this.submitted = true;
+  }
+
+
+  updateScore (questionIndex, isCorrect) {
+    if(isCorrect) {
+      let index = this.correctAnswers.indexOf(questionIndex);
+      if (index == -1) this.correctAnswers.push(questionIndex);
+      index = this.wrongAnsers.indexOf(questionIndex);
+      if (index !== -1) this.wrongAnsers.splice(index, 1);
+    } else {
+      let index = this.wrongAnsers.indexOf(questionIndex);
+      if (index == -1) this.wrongAnsers.push(questionIndex);
+      index = this.correctAnswers.indexOf(questionIndex);
+      if (index !== -1) this.correctAnswers.splice(index, 1);
+    }
+  }
+
+  reset () {
+    this.correctAnswers=[];
+    this.score= 0;
+    this.submitted = false;
+    this.wrongAnsers=[1,2,3,4,5,6,7,8,9,10];
+  }
+
+}

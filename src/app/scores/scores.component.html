@@ -1,0 +1,99 @@
+<mat-form-field>
+  <input matInput placeholder="Password" [(ngModel)]="userToken" [type]="hide ? 'password' : 'text'">
+  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </button>
+</mat-form-field>
+<p style="color: red">{{responseField}}</p>
+<button mat-raised-button color='primary' (click)="verifyToken()">Submit</button>&nbsp;
+
+<button mat-raised-button color='primary' (click)="detailScore()" *ngIf="showSummary && tokenVerified">Show Detail</button>&nbsp;
+<button mat-raised-button color='primary' (click)="summarizeScore()" *ngIf="!showSummary && tokenVerified">Show Summary</button>&nbsp;
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<div class="mat-elevation-z8" *ngIf="tokenVerified && !showSummary">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Exercise Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="fullname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.fullname}} </td>
+    </ng-container>
+
+    <!-- Score Column -->
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
+      <td mat-cell *matCellDef="let row"> {{row.score}} </td>
+    </ng-container>
+
+    <!-- Submit Date Column -->
+    <ng-container matColumnDef="submitdatelocal">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Submit Date </th>
+      <td mat-cell *matCellDef="let row"> {{row.submitdatelocal| date:'medium'}} </td>
+    </ng-container>
+
+    <!-- Color Column
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
+      <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </td>
+    </ng-container>-->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 25, 100, 300]"></mat-paginator>
+</div>
+
+<div class="mat-elevation-z8" *ngIf="tokenVerified && showSummary">
+  <table mat-table [dataSource]="dataSourceSummary" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="exerciseName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Exercise Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.exerciseName}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="studentName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.studentName}} </td>
+    </ng-container>
+
+    <!-- Score Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+      <td mat-cell *matCellDef="let row"> {{row.status}} </td>
+    </ng-container>
+
+    <!-- Submit Date Column -->
+    <ng-container matColumnDef="noOfSubmission">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> No. of Submissions </th>
+      <td mat-cell *matCellDef="let row"> {{row.noOfSubmission}} </td>
+    </ng-container>
+
+    <!-- Color Column
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
+      <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </td>
+    </ng-container>-->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsSummary"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsSummary;">
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 25, 100, 300]"></mat-paginator>
+</div>
+
+

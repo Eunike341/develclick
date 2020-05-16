@@ -1,0 +1,202 @@
+import { Component, OnInit } from '@angular/core';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import {FormControl, Validators} from '@angular/forms';
+import { DatePipe } from '@angular/common';
+
+import { ScoresService } from 'src/app/scores.service';
+import { Scores} from 'src/app/scores.model';
+
+@Component({
+  selector: 'app-mouse',
+  templateUrl: './mouse.component.html',
+  styleUrls: ['./mouse.component.css'],
+  providers: [DatePipe]
+})
+export class MouseComponent implements OnInit {
+
+  movies = [8,6,2,1,4,5,3,7];
+  correctAnswers=[];
+  score= 0;
+  submitted = false;
+  timePeriods = [100, 300, 200, 400, 500];
+  letters = ['B', 'C', 'E', 'D', 'A', 'F'];
+  words = ['digunakan', 'Mouse', 'untuk', 'sangat', 'mudah'];
+  wordsExc = ['mungkin', 'sesering', 'Latihan', 'komputer', 'menggunakan', 'untuk'];
+  wrongAnsers=[1,2,3,4,5,6,7,8,9,10];
+  fullName='';
+
+  fullNameValidator = new FormControl('', [Validators.required]);
+
+  getErrorMessage() {
+    return this.fullNameValidator.hasError('required') ? 'You must enter a value' :'';
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    console.log('test');
+    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
+    console.log(this.movies[0]);
+
+    var sorted = true;
+    for(var i=0; i < this.movies.length; i++) {
+      if(this.movies[i] != i+1) {
+        sorted = false;
+        break;
+      }
+    }
+    if(sorted) {
+      this.updateScore(4, true);
+    } else {
+      this.updateScore(4, false);
+    }
+  }
+
+  onRightClick(event, questionIndex) {
+    console.log('clicked');
+    this.updateScore(questionIndex, true);
+    return false;
+  }
+
+  onLeftClick(event, questionIndex) {
+    console.log('left clicked, ' + questionIndex);
+    this.updateScore(questionIndex, true);
+    return false;
+  }
+
+  onDblClick(event, questionIndex) {
+    console.log('double clicked');
+    this.updateScore(questionIndex, true);
+    return false;
+  }
+
+  constructor(private datePipe: DatePipe, private scoresService: ScoresService) { }
+
+  ngOnInit() {
+    console.log('templateoninit');
+  }
+
+  submitScore () {
+    if(this.getErrorMessage()!=''){
+      return;
+    }
+    var totalQuestions = 10;
+    for(var i=0; i < totalQuestions; i++) {
+      if(this.correctAnswers.indexOf(i+1) != -1) {
+        this.score=this.score+1;
+      }
+    }
+    console.log('score:' + this.score);
+
+    this.submitted = true;
+
+    console.log('scoresService:' + this.scoresService);
+    this.scoresService.getScores().subscribe(data => {
+      console.log(data);
+    });
+    let scores = new Scores();
+    scores.id = "mouse";
+    scores.score = this.score;
+    scores.fullname = this.fullName;
+    scores.submitdate = new Date().toISOString();
+    console.log(scores.score+", " + scores.id +", date:" + scores.submitdate
+      +", this name:" + this.fullName+", this score:" + this.score
+      +", score:" + scores.score);
+    //console.log('convert:' + this.scoresService.getData(scores));
+    //console.log('stringify:' + JSON.parse(JSON.stringify(scores)))
+    this.scoresService.createScores(scores);
+    console.log("saved");
+  }
+
+  dropTimePeriods(event: CdkDragDrop<string[]>) {
+    console.log('test');
+    moveItemInArray(this.timePeriods, event.previousIndex, event.currentIndex);
+
+    var sorted = true;
+    for(var i=this.timePeriods.length; i > 0; i--) {
+      if(this.timePeriods[5-i] != i * 100) {
+        sorted = false;
+        break;
+      }
+    }
+    if(sorted) {
+      this.updateScore(5, true);
+    } else {
+      this.updateScore(5, false);
+    }
+  }
+
+  dropLetters(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.letters, event.previousIndex, event.currentIndex);
+
+    var sorted = false;
+    if(this.letters[0]=='A' && this.letters[1]=='B' && this.letters[2]=='C' && this.letters[3]=='D'
+      && this.letters[4]=='E' && this.letters[5]=='F'){
+      sorted= true;
+    }
+
+    if(sorted) {
+      this.updateScore(6, true);
+    } else {
+      this.updateScore(6, false);
+    }
+  }
+
+  dropWords(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.words, event.previousIndex, event.currentIndex);
+
+    var sorted = false;
+    if(this.words[0]=='Mouse' && this.words[1]=='sangat' && this.words[2]=='mudah' && this.words[3]=='untuk'
+      && this.words[4]=='digunakan' ){
+      sorted= true;
+    }
+
+    if(sorted) {
+      this.updateScore(7, true);
+    } else {
+      this.updateScore(7, false);
+    }
+  }
+
+  dropWordsExc(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.wordsExc, event.previousIndex, event.currentIndex);
+
+    var sorted = false;
+    if(this.wordsExc[0]=='Latihan' && this.wordsExc[1]=='untuk' && this.wordsExc[2]=='menggunakan'
+      && this.wordsExc[3]=='komputer' && this.wordsExc[4]=='sesering' && this.wordsExc[5]=='mungkin' ){
+      sorted= true;
+    }
+
+    if(sorted) {
+      this.updateScore(8, true);
+    } else {
+      this.updateScore(8, false);
+    }
+  }
+
+  updateScore (questionIndex, isCorrect) {
+    if(isCorrect) {
+      let index = this.correctAnswers.indexOf(questionIndex);
+      if (index == -1) this.correctAnswers.push(questionIndex);
+      index = this.wrongAnsers.indexOf(questionIndex);
+      if (index !== -1) this.wrongAnsers.splice(index, 1);
+    } else {
+      let index = this.wrongAnsers.indexOf(questionIndex);
+      if (index == -1) this.wrongAnsers.push(questionIndex);
+      index = this.correctAnswers.indexOf(questionIndex);
+      if (index !== -1) this.correctAnswers.splice(index, 1);
+    }
+  }
+
+  reset () {
+    this.correctAnswers=[];
+    this.score= 0;
+    this.submitted = false;
+    this.wrongAnsers=[1,2,3,4,5,6,7,8,9,10];
+
+    this.movies = [8,6,2,1,4,5,3,7];
+    this.timePeriods = [100, 300, 200, 400, 500];
+    this.letters = ['B', 'C', 'E', 'D', 'A', 'F'];
+    this.words = ['digunakan', 'Mouse', 'untuk', 'sangat', 'mudah'];
+    this.wordsExc = ['mungkin', 'sesering', 'Latihan', 'komputer', 'menggunakan', 'untuk'];
+  }
+
+}
