@@ -1,0 +1,8 @@
+First checkout
+npm install
+
+Adding languages
+ng add @angular/localize
+ng xi18n --output-path src/i18n
+ng build --output-path=dist/mouseandkeys/en --aot --prod --base-href /en/ --i18n-file=src/i18n/messages.en.xlf --i18n-format=xlf --i18n-locale=en
+ng build --output-path=dist/mouseandkeys/id --aot --prod --base-href /id/ --i18n-file=src/i18n/messages.id.xlf --i18n-format=xlf --i18n-locale=id

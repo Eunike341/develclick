@@ -6,10 +6,21 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source" : "/",
+        "destination" : "/en",
+        "type" : 301
+      }
+    ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/en/**",
+        "destination": "/en/index.html"
+      },
+      {
+        "source": "/id/**",
+        "destination": "/id/index.html"
       }
     ]
   }

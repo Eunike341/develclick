@@ -1,13 +1,21 @@
 <nav mat-tab-nav-bar [backgroundColor]="'primary'" [color]="'white'">
 
-  <a mat-tab-link style="opacity: 1"
+  <a i18n mat-tab-link style="opacity: 1"
      [routerLink]="'/mouse'">
     Mouse 1
   </a>
-  <a mat-tab-link style="opacity: 1"
+  <a i18n mat-tab-link style="opacity: 1"
      [routerLink]="'/mouse2'">
     Mouse 2
   </a>
+
+  <span class="filler"></span>
+
+  <ng-template ngFor let-lang [ngForOf]="languages">
+  <span *ngIf="lang.code !== localeId">
+    <a href="/{{lang.code}}/" mat-tab-link style="opacity: 0.5; min-width: 50px; padding-left: 5px">{{lang.label}}</a> </span>
+    <span *ngIf="lang.code === localeId" mat-tab-link style="opacity: 1; min-width: 50px; padding-left: 5px">{{lang.label}} </span>
+  </ng-template>
 </nav>
 
 <router-outlet></router-outlet>

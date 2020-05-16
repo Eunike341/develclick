@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="0e163ea199dcc6906ca004df0775bd84fd4fa63c" datatype="html">
+        <source>
+    Mouse 1
+  </source>
+  <target>Latihan 1</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5868872f2cbfac505a46571169ceeb70a18d42f4" datatype="html">
+        <source>
+    Mouse 2
+  </source>
+  <target>Latihan 2</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="acd378b040b341c820c62b5c2acd4f4b773a783c" datatype="html">
+        <source>Nama Lengkap</source>
+		<target>Nama Lengkap</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="380e20a1e13d9489c69f6dbea7da19025ab6eb25" datatype="html">
+        <source>Score</source>
+		<target>Score</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="544231026132aa8858e0f1878319ddb370e49e1d" datatype="html">
+        <source>Wrong answer(s)</source>
+		<target>Wrong answer(s)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="725a2ebd695a2207002a32d11e136caac37fc889" datatype="html">
+        <source>Catatan: Perintah &quot;Click&quot; tanpa diikuti dengan kata &quot;kanan&quot;, sama dengan &quot;Click kiri&quot;</source>
+		<target>Catatan: Perintah &quot;Click&quot; tanpa diikuti dengan kata &quot;kanan&quot;, sama dengan &quot;Click kiri&quot;</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="87d1e5919eb60c38370907e8527005d05897ea8f" datatype="html">
+        <source>Petunjuk</source>
+		<target>Petunjuk</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0bc1aae579a52ca3fa4dc878402d2b3fdf6c0447" datatype="html">
+        <source>
+        Isi nama lengkap anda.
+      </source>
+	  <target>
+        Isi nama lengkap anda.
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e2f0fa7d2969a14c38398349689b2ef1b93a1d8d" datatype="html">
+        <source>
+        Click pada baris dengan nomor soal untuk membuka isi soal.
+      </source>
+	  <target>
+        Click pada baris dengan nomor soal untuk membuka isi soal.
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="de8befa71946e2d6f9b2b2ad06316d10e0a4e209" datatype="html">
+        <source>
+        Setelah mengerjakan semua soal, click button &quot;Submit&quot;. Score anda akan tertulis di atas.
+      </source>
+	  <target>
+        Setelah mengerjakan semua soal, click button &quot;Submit&quot;. Score anda akan tertulis di atas.
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b54cc1dec7714fc169525ee2c7789f0641524fcc" datatype="html">
+        <source>
+        Bila score anda belum 10, click button &quot;Retry&quot; untuk mengulang.
+      </source>
+	  <target>
+        Bila score anda belum 10, click button &quot;Retry&quot; untuk mengulang.
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3b609446af5dda0eb71367b9152f81e410733ffe" datatype="html">
+        <source>1. Click kanan pada button di bawah.</source>
+		<target>1. Click kanan pada button di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e2b5a58d1cb9a4b678cc6e7d1735e487f4aef9da" datatype="html">
+        <source>2. Click pada button di bawah.</source>
+		<target>2. Click pada button di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ed1d470a0a302bad138c04db7a149063762ba0da" datatype="html">
+        <source>3. Double click pada button di bawah.</source>
+		<target>3. Double click pada button di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="416bd680b612cde6685c901ca2cccd51d9e54ba8" datatype="html">
+        <source>4. Urutkan angka-angka berikut dari 1 hingga 8 (paling kecil hingga paling besar).</source>
+		<target>4. Urutkan angka-angka berikut dari 1 hingga 8 (paling kecil hingga paling besar).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b9122361813a3c3bc1c39b4e5bf78eb2c33abfd2" datatype="html">
+        <source>5. Urutkan angka-angka berikut dari 500 hingga 100 (paling besar hingga paling kecil).</source>
+		<target>5. Urutkan angka-angka berikut dari 500 hingga 100 (paling besar hingga paling kecil).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d67c11bed7e2958ed18ded15673721718d0f1c47" datatype="html">
+        <source>6. Urutkan huruf-huruf berikut dari A hingga J.</source>
+		<target>6. Urutkan huruf-huruf berikut dari A hingga J.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7c8c2ed83594d7977af6ed51fae46843210f869a" datatype="html">
+        <source>7. Urutkan kata-kata di bawah menjadi kalimat &quot;Mouse sangat mudah untuk digunakan&quot;.</source>
+		<target>7. Urutkan kata-kata di bawah menjadi kalimat &quot;Mouse sangat mudah untuk digunakan&quot;.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">150</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0b522060872f18551021a8061d490bbfd5058cb8" datatype="html">
+        <source>
+          8. Urutkan kata-kata di bawah menjadi kalimat &quot;Latihan untuk menggunakan komputer sesering mungkin hingga mahir&quot;.
+          </source>
+		  <target>
+          8. Urutkan kata-kata di bawah menjadi kalimat &quot;Latihan untuk menggunakan komputer sesering mungkin hingga mahir&quot;.
+          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">167</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="66b1ee550435358e5c1b63be38efedec4020b3ec" datatype="html">
+        <source>9. Click pada button dengan nomor 9 di bawah.</source>
+		<target>9. Click pada button dengan nomor 9 di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">186</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3d0f0b35480c3b938ce38a7c7758567a67b81dbd" datatype="html">
+        <source>10. Double click pada button dengan tulisan &quot;Komputer&quot; di bawah.</source>
+		<target>10. Double click pada button dengan tulisan &quot;Komputer&quot; di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">206</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="37aac30db9ceba23e580454863454b505bd3f2e8" datatype="html">
+        <source>
+      Submission dengan mobile phone tidak berlaku. Silahkan coba lagi dengan komputer/ laptop anda.
+      </source>
+	  <target>
+      Submission dengan mobile phone tidak berlaku. Silahkan coba lagi dengan komputer/ laptop anda.
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
+          <context context-type="linenumber">221</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7ad0efcd1c3fc33dd5431b39c4fda93bf159ed2c" datatype="html">
+        <source>1. Click pada lambang pesawat terbang di bawah.</source>
+		<target>1. Click pada lambang pesawat terbang di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cc5a8011bf8dc9097915534d94b0ce0079f23249" datatype="html">
+        <source>2. Click kanan pada lambang bunga di bawah.</source>
+		<target>2. Click kanan pada lambang bunga di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="09eee21447375ab63c4d615414644a79bbfb158c" datatype="html">
+        <source>3. Double click pada lambang bunga di bawah.</source>
+		<target>3. Double click pada lambang bunga di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="783425aaa6906aa9750b77077203840e9a9536df" datatype="html">
+        <source>4. Double click pada button dengan tulisan &quot;Belajar&quot; di bawah.</source>
+		<target>4. Double click pada button dengan tulisan &quot;Belajar&quot; di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="714eb52c674eba74dd7e89dd77dcbc59dc9b86a1" datatype="html">
+        <source>5. Double click pada tulisan &quot;Documents&quot; di bawah.</source>
+		<target>5. Double click pada tulisan &quot;Documents&quot; di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e57d6db396d6442bb62c1934dd29f807b190bb68" datatype="html">
+        <source>6. Double click pada button dengan tulisan &quot;Desktop&quot; di bawah.</source>
+		<target>6. Double click pada button dengan tulisan &quot;Desktop&quot; di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">144</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4a71b82da98ea478951830adea56908270b3904c" datatype="html">
+        <source>7. Click kanan pada button dengan tulisan &quot;Computer&quot; bawah.</source>
+		<target>7. Click kanan pada button dengan tulisan &quot;Computer&quot; bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">165</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="244c6a1f3dfab8ba0143fde20493b384f81a53f4" datatype="html">
+        <source>8. Click pada button dengan tulisan &quot;Word&quot; di bawah.</source>
+		<target>8. Click pada button dengan tulisan &quot;Word&quot; di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">185</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e0176c277ffe1b888deaa61e66d4558a7a4d4185" datatype="html">
+        <source>9. Click pada button dengan tulisan &quot;Copy&quot; di bawah.</source>
+		<target>9. Click pada button dengan tulisan &quot;Copy&quot; di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">205</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2565379e99881d62aec3274b995fbcd47bfa3e90" datatype="html">
+        <source>10. Double click pada button dengan tulisan &quot;Edit&quot; di bawah.</source>
+		<target>10. Double click pada button dengan tulisan &quot;Edit&quot; di bawah.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">225</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fafb6b2edd3db4f4e7b6134e960d907fbe532cb1" datatype="html">
+        <source>Submission dengan mobile phone tidak berlaku. Silahkan coba lagi dengan komputer/ laptop anda.</source>
+		<target>Submission dengan mobile phone tidak berlaku. Silahkan coba lagi dengan komputer/ laptop anda.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/mouse2/mouse2.component.html</context>
+          <context context-type="linenumber">240</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
