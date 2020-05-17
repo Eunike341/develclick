@@ -51,14 +51,15 @@ export class ScoresComponent implements OnInit {
   showSummary:boolean = false;
   tokenVerified:boolean = false;
 
-  displayedColumns: string[] = ['id', 'fullname', 'score', 'submitdatelocal'];
   dataSource: MatTableDataSource<Scores>;
-  displayedColumnsSummary: string[] = ['exerciseName', 'studentName', 'noOfSubmission', 'status'];
+  displayedColumns: string[] = ['id', 'fullname', 'score', 'submitdatelocal'];
+  @ViewChild('TableOnePaginator', {static: true}) tableOnePaginator: MatPaginator;
+  @ViewChild('TableOneSort', {static: true}) tableOneSort: MatSort;
+
   dataSourceSummary: MatTableDataSource<SummarizeScore>;
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: true}) paginatorSummary: MatPaginator;
-  @ViewChild(MatSort, {static: true}) sortSummary: MatSort;
+  displayedColumnsSummary: string[] = ['exerciseName', 'studentName', 'noOfSubmission', 'status'];
+  @ViewChild('TableTwoPaginator', {static: true}) tableTwoPaginator: MatPaginator;
+  @ViewChild('TableTwoSort', {static: true}) tableTwoSort: MatSort;
 
   constructor(private scoresService: ScoresService) {
     // Create 100 users
@@ -113,8 +114,8 @@ export class ScoresComponent implements OnInit {
       });
       console.log("allScores size:" + this.allScores.length);
       this.dataSource = new MatTableDataSource(this.allScores);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.tableOnePaginator;
+      this.dataSource.sort = this.tableOneSort;
     });
   }
 
@@ -144,8 +145,8 @@ export class ScoresComponent implements OnInit {
     }
 
     this.dataSourceSummary = new MatTableDataSource(this.allScoresSumarized);
-    this.dataSourceSummary.paginator = this.paginatorSummary;
-    this.dataSourceSummary.sort = this.sortSummary;
+    this.dataSourceSummary.paginator = this.tableTwoPaginator;
+    this.dataSourceSummary.sort = this.tableTwoSort;
 
     this.showSummary = true;
   }
@@ -175,7 +176,7 @@ export class ScoresComponent implements OnInit {
           this.viewScore();
           this.tokenVerified = true;
         } else {
-          this.responseField = 'Invalid token';
+          this.responseField = 'Invalid password';
         }
 
       });

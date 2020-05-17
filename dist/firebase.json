@@ -11,6 +11,16 @@
         "source" : "/",
         "destination" : "/en",
         "type" : 301
+      },
+      {
+        "source" : "/mouse",
+        "destination" : "/en/mouse",
+        "type" : 301
+      },
+      {
+        "source" : "/mouse2",
+        "destination" : "/en/mouse2",
+        "type" : 301
       }
     ],
     "rewrites": [

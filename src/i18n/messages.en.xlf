@@ -60,7 +60,7 @@
       </trans-unit>
       <trans-unit id="725a2ebd695a2207002a32d11e136caac37fc889" datatype="html">
         <source>Catatan: Perintah &quot;Click&quot; tanpa diikuti dengan kata &quot;kanan&quot;, sama dengan &quot;Click kiri&quot;</source>
-		<target>Notes: The word &quot;Click&quot; that is not prefixed by &quot;right&quot;, means &quot;left click&quot;</target>
+		<target>Hint: The word &quot;Click&quot; that is not prefixed by &quot;right&quot;, means &quot;left click&quot;</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
           <context context-type="linenumber">18</context>
@@ -72,7 +72,7 @@
       </trans-unit>
       <trans-unit id="87d1e5919eb60c38370907e8527005d05897ea8f" datatype="html">
         <source>Petunjuk</source>
-		<target>Notes</target>
+		<target>Steps</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/mouse/mouse.component.html</context>
           <context context-type="linenumber">20</context>
