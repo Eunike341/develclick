@@ -1,5 +1,9 @@
 # Develclick - Mouseandkeys
 
+Source code for develclick web on firebase. 
+Develclik is an angular web application for students to practice using mouse.
+Available in English and Indonesian languages.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
 
 ## Development server
